@@ -14,5 +14,14 @@ int main(){
     // b = a-b;
     // a = a-b;
     // cout << a << " " << b << endl;
+
+    // int hostUser, GuestUser;
+    // cout << "hostUser: ";
+    // cin >> hostUser;
+    // cout << "GuestUser: ";  
+    // cin >> GuestUser;
+    // (hostUser==GuestUser) ? cout<< "Correct" : cout << "Incorrect";
+
+
     return 0;
 }
