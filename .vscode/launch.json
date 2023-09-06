@@ -19,8 +19,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/shukurullomeliboyev2004/Desktop/c++OOP/introduction",
-      "program": "/Users/shukurullomeliboyev2004/Desktop/c++OOP/introduction/build/Debug/outDebug"
+      "cwd": "/Users/shukurullomeliboyev2004/Desktop/c++OOP/class_lab-2",
+      "program": "/Users/shukurullomeliboyev2004/Desktop/c++OOP/class_lab-2/build/Debug/outDebug"
     }
   ]
 }
