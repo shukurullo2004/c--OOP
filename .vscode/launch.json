@@ -50,8 +50,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/shukurullomeliboyev2004/Desktop/c++OOP/homework_1",
-      "program": "/Users/shukurullomeliboyev2004/Desktop/c++OOP/homework_1/build/Debug/outDebug"
+      "cwd": "/Users/shukurullomeliboyev2004/Desktop/c++OOP/introduction",
+      "program": "/Users/shukurullomeliboyev2004/Desktop/c++OOP/introduction/build/Debug/outDebug"
     }
   ]
 }
