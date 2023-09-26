@@ -43,7 +43,7 @@ void sort3(double& a, double& b, double& c, bool (*compare)(double&, double&)) {
 
 // Print three numbers
 void print3(const double& a, const double& b, const double& c) {
-    std::cout << a << "-" << b << "-" << c << std::endl;
+    std::cout << a << " " << b << " " << c << std::endl;
 }
 
 // Swap two numbers
