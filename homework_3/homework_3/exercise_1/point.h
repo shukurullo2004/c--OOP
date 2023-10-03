@@ -1,19 +1,25 @@
-#ifndef POINT_H
-#define POINT_H
+#ifndef LAB5_POINT_H
+#define LAB5_POINT_H
+
+const int POSMIN = 0;
+const int POSMAX = 100;
 
 class Point {
-private:
-    int m_x;
-    int m_y;
-    bool isInRange(int pos);
+    int m_x; // x-pos: range 0~100
+    int m_y; // y-pos: range 0~100
 
 public:
-    Point(int x = 0, int y = 0);
+    static bool isInRange(int pos);
+
     bool InitMembers(int xpos, int ypos);
+
     bool SetX(int xpos);
+
     bool SetY(int ypos);
+
     int GetX() const;
+
     int GetY() const;
 };
 
-#endif // POINT_H
+#endif // LAB5_POINT_H

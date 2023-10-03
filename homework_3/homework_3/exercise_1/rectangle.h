@@ -1,16 +1,15 @@
-#include <iostream>
-#include "Rectangle.h"
+#ifndef LAB5_RECTANGLE_H
+#define LAB5_RECTANGLE_H
 
-Rectangle::Rectangle() {
-    // Constructor implementation
-}
+#include "Point.h"
 
-void Rectangle::InitMembers(const Point &ul, const Point &lr) {
-    // Method implementation
-}
+class Rectangle {
+public:
+    Point m_upLeft;
+    Point m_lowRight;
 
-void Rectangle::ShowRecInfo() const {
-    // Method implementation
-    std::cout << "LeftTop: [" << m_upLeft.GetX() << "," << m_upLeft.GetY() << ']' << std::endl;
-    std::cout << "RightBottom: [" << m_lowRight.GetX() << "," << m_lowRight.GetY() << ']' << std::endl << std::endl;
-}
+    bool InitMembers(const Point& ul, const Point& lr);
+    void ShowRecInfo() const;
+};
+
+#endif // LAB5_RECTANGLE_H
