@@ -1,41 +1,44 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
-class Student {
-public:
+class Youtubechannel{
+    private:
+    string ownername;
+    int subscriberscount = 0;
     string name;
-    int birth_date;
-    string born_place;
-    vector<string> interests;
-
-    // Correct the constructor to initialize members properly
-    Student(int tugilgan, string joy, string ism) {
-        birth_date = tugilgan;
-        born_place = joy;
+    vector <string>PublishedVideos;
+    public:
+     Youtubechannel(string Ownername, int Subscriberscount, string ism){
+        ownername = Ownername;
+        subscriberscount = Subscriberscount;
         name = ism;
-    }
-
-    void getinfo() {
-        cout << "birth_date: " << birth_date << endl;
-        cout << "name: " << name << endl;
-        cout << "born_place: " << born_place << endl;
-        cout << endl;
-        for (string interest : interests) {
-            cout << "interest: " << interest << endl;
+     }
+    void getInfo(){
+        cout <<ownername << endl;
+        cout <<name << endl;
+        cout << subscriberscount<<endl;
+        for(string video:PublishedVideos){
+            cout << video<<endl;
         }
     }
+    void subscribers(){
+        subscriberscount ++;
+    }
+    void unsubscribers(){
+        if(subscriberscount > 0)
+        subscriberscount --;
+    }
+    void publishvideo(string video){
+        PublishedVideos.push_back(video);
+    }
+
 };
-
-int main() {
-    Student talaba(20040225, "Meliboev Shukurullo", "Sirdaryo");
-
-    talaba.interests.push_back("chess");
-    talaba.interests.push_back("football");
-    talaba.interests.push_back("hiking");
-    talaba.interests.push_back("gaming");
-
-    talaba.getinfo();
-
+int main(){
+    Youtubechannel mychannel("about life", 12, "Shukurullo Meliboev");
+    mychannel.subscribers();
+    mychannel.subscribers();
+    mychannel.publishvideo("sevgi va o'lim");
+    mychannel.publishvideo("Hayot va Dunyo");
+    mychannel.getInfo();
     return 0;
 }
