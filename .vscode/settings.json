@@ -58,6 +58,7 @@
   "files.associations": {
     "ostream": "cpp",
     "iostream": "cpp",
-    "random": "cpp"
+    "random": "cpp",
+    "vector": "cpp"
   }
 }
