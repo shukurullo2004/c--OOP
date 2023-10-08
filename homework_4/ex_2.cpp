@@ -1,3 +1,24 @@
 #include <iostream>
-#include <circle.h>
-using namespace std;
+#include "Circle.h"
+
+int main() {
+    Circle c1;
+    Circle c2{};
+    Point p{10.5, 20.5};
+    Circle c3{p, 20.0};
+    Circle c4{20.5, 10.5, 10.0};
+
+    std::cout << "c1.info: ";
+    c1.info();
+    
+    std::cout << "c2.info: ";
+    c2.info();
+    
+    std::cout << "c3.info: ";
+    c3.info();
+    
+    std::cout << "c4.info: ";
+    c4.info();
+
+    return 0;
+}
