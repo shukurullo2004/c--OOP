@@ -9,18 +9,17 @@ private:
     double radius;
 
 public:
-    // Constructors
+    
     Circle();
     Circle(const Point& c, double r);
     Circle(double x, double y, double r);
 
-    // Destructor
+  
     ~Circle();
 
-    // Member function to display information
     void info() const;
 };
 
-#endif // CIRCLE_
+#endif 
 
 
