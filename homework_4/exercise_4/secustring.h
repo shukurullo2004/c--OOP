@@ -2,7 +2,7 @@
 #ifndef Secustring
 #define Secustring
 
-#include <string> // Include the necessary header for std::string
+#include <string> 
 
 class secustring {
 private:
