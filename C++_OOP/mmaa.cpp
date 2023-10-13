@@ -1,44 +1,25 @@
 #include <iostream>
+#include <cstring> // You should include the <cstring> header for string-related functions.
 using namespace std;
 
-class Point {
-private:
-    double x;
-    double y;
-
-public:
-    // Constructor
-    Point(double initialX, double initialY) : x(initialX), y(initialY) {}
-
-    // Member function to display the position
-    void info() {
-        cout << "(" << x << "," << y << ")" << endl;
-    }
-
-    // Interface function to get x position
-    double getx() {
-        return x;
-    }
-
-    // Interface function to get y position
-    double gety() {
-        return y;
-    }
-
-    // Interface function to get both x and y positions
-    void get(double& outX, double& outY) {
-        outX = x;
-        outY = y;
-    }
+struct Student {
+    int ID;
+    char name[10];
+    double height;
 };
 
-int main(void) {
-    double x, y;
-    Point p{10.5, 20.99};
-    p.info();
-    x = p.getx();
-    y = p.gety();
-    cout << "(" << x << ", " << y << ")" << endl;
+int main() {
+    struct Student s; // Declare a struct variable s of type Student.
+    
+    // Assign values to the members of the struct.
+    s.ID = 123;
+    s.name = "John"; // Use strcpy to copy a string into the name field.
+    s.height = 175.5;
+
+    // Print the values of the struct members.
+    cout << "ID: " << s.ID << endl;
+    cout << "Name: " << s.name << endl;
+    cout << "Height: " << s.height << endl;
 
     return 0;
 }
