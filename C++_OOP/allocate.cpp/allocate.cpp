@@ -7,8 +7,8 @@ class Student{
     void print(){
         cout << name << endl;
     }
-    Student(string n = ""){
-        name = n;
+    Student(string name = ""){
+        this->name = name;
     }
     ~Student(){
         cout <<"Succesfully deleted constructor!" << endl;
@@ -18,6 +18,7 @@ class Student{
 int main(){
     Student s1{"Shukurullo"};
     s1.print();
+
     Student *s2 = new Student;
     (*s2).name = "Azamat";
     s2->print();
