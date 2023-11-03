@@ -4,10 +4,11 @@ using namespace std;
 int *apply_all(int* array1, int size1, int* array2, int size2, int& size) {
     size = size1 * size2;
     int *result = new int[size]; 
-
+    int position = 0;
     for (int i = 0; i < size1; i++) {
         for (int j = 0; j < size2; j++) {
-            result[i * size2 + j] = array1[i] * array2[j];
+            result[position] = array1[i] * array2[j];
+            position++;
         }
     }
     return result;
