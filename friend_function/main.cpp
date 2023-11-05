@@ -2,6 +2,7 @@
 #include <cmath>
 using namespace std;
 class Round{
+    friend void print(Round);
     private:
     float circumference;
     float area;
@@ -11,7 +12,7 @@ class Round{
         this ->circumference=circumference;
         area =  3.14 *pow((circumference/2 * 3.14), 2);
         }
-    friend void print(Round);
+    
 };
 void print(Round a){
     cout <<"circumference :" << a.circumference << endl;
