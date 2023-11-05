@@ -1,23 +1,25 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
-class Myobject{
-    friend void double_x(Myobject &object);
+class Round{
     private:
-    int x;
-    void multi(){
-        x *= 2;
-    }
+    float circumference;
+    float area;
     public:
-    void print(){
-        cout << "X: " << x << endl;
-    }
-   
+
+    void setA(float circumference){
+        this ->circumference=circumference;
+        area =  3.14 *pow((circumference/2 * 3.14), 2);
+        }
+    friend void print(Round);
 };
-
+void print(Round a){
+    cout <<"circumference :" << a.circumference << endl;
+    cout << "area: " << a.area << endl;
+   }
 int main(){
-    Myobject mening(7);
-    mening.print();
-    mening.double_x();
-    mening.print();
-
+    Round abs;
+    abs.setA(3);
+    print(abs);
+    return 0;
 }
