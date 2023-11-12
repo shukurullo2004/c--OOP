@@ -6,6 +6,8 @@ using namespace std;
 
 class IntArray
 {
+    friend class IntArrayHandler;
+
 private:
     int m_len{ 0 };
     int* m_data{ nullptr };
@@ -15,79 +17,93 @@ public:
         : m_len{ len }
     {
         m_data = new int[m_len];
-        for(int i = 0 ; i<m_len; ++i){
+
+        for (size_t i = 0; i < m_len; i++)
+        {
             m_data[i] = 0;
         }
     }
-    ~IntArray() {
+
+    void setArray(int array[], int size)
+    {
+        for (size_t i = 0; i < size; i++)
+        {
+            m_data[i] = array[i];
+        }
+    }
+
+    void displayArray()
+    {
+        for (size_t i = 0; i < m_len; i++)
+        {
+            cout << "[" << i << "]" << setw(2) << m_data[i] << endl;
+        }
+    }
+
+    void stat()
+    {
+        for (size_t i = 0; i < m_len; i++)
+        {
+            m_data[i] = 0;
+        }
+    }
+
+    ~IntArray()
+    {
         if (m_data) delete[] m_data;
     }
-    friend class IntArrayHandler;
 };
 
-class IntArrayHandler:IntArray{
-
+class IntArrayHandler : public IntArray
+{
 public:
-    IntArrayHandler(int len) : IntArray(len) {};
-    IntArrayHandler(int *arr1, int len): IntArray(len){
-        for(int i = 0; i < len; ++i){
-                m_data[i] = arr1[i];
-            }
+    // IntArrayHandler(int size) : IntArray(size) {}
+
+    // void setIntArray(int array[])
+    // {
+    //     setArray(array, m_len);
+    // }
+    IntArrayHandler(IntArray *arr) : IntArray(arr->m_len)
+    {
+        setArray(arr->m_data, m_len);
     }
-    void setArray(int *data1, int arSize){
-        for(int i = 0 ; i<arSize; ++i){
-            m_data[i] = data1[i];
-        }
-       
-    }
-    void display(){
-        
-        for(int i = 0 ; i<arSize; ++i){
-            cout << "[" << i << "]" << m_data[i]<< endl;
-            
-        }
-    }
-    void stat(){
-    
-        double avr = 0;
-        int i = 0;
-        int sum = 0;
-        for(int i = 0 ; i<arSize; ++i){
-            sum = sum +m_data[i];
-            ++i;
-        }
-        avr = sum / i;
-        cout << "elements: " << i << endl;
-        cout << "Sum: " << sum << endl;
-        cout << "Average: " << avr;
+    void setIntArray(IntArray *arr)
+    {
+        setArray(arr->m_data, m_len);
     }
 };
-
 
 const int arSize = 20;
 
-int main() {
+int main()
+{
     int i;
     int data1[arSize], data2[arSize];
     IntArray ar1{ arSize }, ar2{ arSize };
     srand((unsigned int)time(NULL));
-    for (i = 0; i < arSize; ++i) {
+
+    for (i = 0; i < arSize; ++i)
+    {
         data1[i] = rand() % 100;
         data2[i] = rand() % 100;
     }
+
     IntArrayHandler handler{ &ar1 };
     handler.setArray(data1, arSize);
+
     cout << "== ar1: displayArray() ===" << endl;
     handler.displayArray();
     cout << "====== ar1: stat() =======" << endl;
     handler.stat();
     cout << "==========================" << endl;
+
     handler.setIntArray(&ar2);
-    handler.setArray(data2, arSize);
-    cout << endl << "== ar2: displayArray() ===" << endl;
+    
+    cout << "== ar2: displayArray() ===" << endl;
     handler.displayArray();
     cout << "====== ar2: stat() =======" << endl;
     handler.stat();
     cout << "==========================" << endl;
+
     return 0;
 }
