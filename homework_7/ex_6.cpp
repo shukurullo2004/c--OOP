@@ -36,19 +36,40 @@ public:
         cout << "DRMKey: " << DRMKey << endl;
         cout << "format: " << format << endl;
      }
+     ~EBook(){ };
 };
 
 const int MAX_BOOKS = 100;
-class EBookLibrary{
+class EBookLibrary {
     private:
-    EBook* m_books[100];
+    EBook* m_books[MAX_BOOKS];
     int m_cnt;
 
     public:
-    EBookLibrary();
-    ~EBookLibrary();
-    void AddBook(Ebook* book);
-    void ShowEBookInfo();
+    EBookLibrary():m_cnt{0}{ };
+   
+    void AddBook(EBook* book){
+        if(m_cnt < MAX_BOOKS){
+            m_books[m_cnt++] = book;
+        }
+        else{
+            cout << "Library is full " << endl;
+        }
+    };
+    void ShowAllBooks(){
+        for(int i = 0; i < m_cnt; ++i){
+            cout << i+1 << ":" ;
+            m_books[i]->ShowEBookInfo();
+            cout << endl;
+
+        }
+    }
+
+     ~EBookLibrary(){
+        for(int i = 0; i < m_cnt; i++){
+           delete m_books[i];
+        }
+     }
 };
 
 int main() {
