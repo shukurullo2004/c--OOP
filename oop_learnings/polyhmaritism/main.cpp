@@ -69,6 +69,8 @@ int main() {
     // my_channel.CheckAnalytics();
     // another_channel.CheckAnalytics();
 
+    
+// Polymorithm is following: 
     YoutubeChannel *ytch1 = &another_channel;
     YoutubeChannel *ytch2 = &my_channel;
     ytch1->CheckAnalytics();
