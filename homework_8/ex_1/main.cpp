@@ -2,7 +2,7 @@
 using namespace std;
 
 const int MAX_ACC_NUM = 100;
-
+ 
 enum BankOption {
     MAKE=1,
     DEPOSIT,
