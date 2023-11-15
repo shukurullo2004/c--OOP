@@ -4,7 +4,7 @@ using namespace std;
 const int MAX_ACC_NUM = 100;
 
 enum BankOption {
-    MAKE,
+    MAKE=1,
     DEPOSIT,
     WITHDRAW,
     INQUIRE,
@@ -47,7 +47,7 @@ public:
         }
     }
 
-    int Withdraw(int money) {
+    void Withdraw(int money) {
         if(money > 0 && m_balance >=money){
             m_balance -= money;
             cout << "Completed Successfully, remained balace: " << m_balance << endl;
@@ -116,7 +116,7 @@ public:
     std::cout << "3. Withdraw Money" << std::endl;
     std::cout << "4. Show All Account Info" << std::endl;
     std::cout << "5. Exit" << std::endl;
-}
+    }
    
 
 int main(void) {
