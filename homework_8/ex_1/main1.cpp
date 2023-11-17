@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+#include <cstring>
 
 const int MAX_ACC_NUM = 100;
  
@@ -25,12 +26,18 @@ public:
         strcpy(m_cusName, cname);
         
     }
+    Account(const Account &other ){
+        m_accID = other.m_accID;
+        m_balance = other.m_balance;
+        m_cusName = new char[strlen(other.m_cusName) + 1];
+        strcpy(m_cusName, other.m_cusName);
+    }
 
     ~Account() {
         delete[] m_cusName;
     }
 
-    int GetAccID(void) {
+    int GetAccID(void) const{
         return m_accID;
     }
 
@@ -57,7 +64,7 @@ public:
         }
     }
 
-    void ShowAccInfo(void) {
+    void ShowAccInfo(void)const {
         std::cout << "Account ID: " << m_accID << std::endl;
         std::cout << "Customer Name: " << m_cusName << std::endl;
         std::cout << "Balance: $" << m_balance << std::endl;
