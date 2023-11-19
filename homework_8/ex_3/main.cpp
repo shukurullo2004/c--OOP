@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 #include <cstring>
-
+// it has error
 const int MAX_ACC_NUM = 100;
  
 enum BankOption {
