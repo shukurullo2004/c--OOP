@@ -71,6 +71,10 @@ public:
 class SavingAccount : public Account {
 public:
     int interestRate;
+    SavingAccount(int ID, int balance, const char* cname) : m_accID(ID), m_balance(balance) {
+        m_cusName = new char[strlen(cname) + 1];
+        strcpy(m_cusName, cname);
+    }
 
     void Deposit(int money) {
     if (money > 0) {
@@ -87,7 +91,7 @@ class HighCreditAccount : public SavingAccount {
 public:
     int specialRate;
 
-    void Deposit(int money) override {
+    void Deposit(int money){
         if (money > 0) {
             m_balance += money;
             std::cout << "Completed Successfully, added money: $" << money << " All balance:$ " << m_balance << std::endl;
@@ -113,7 +117,7 @@ public:
         }
     }
 
-    void ShowAllAccInfo() const {
+    void ShowAllAccInfo(){
         for (int i = 0; i < accNum; i++) {
             accArr[i]->ShowAccInfo();
         }
@@ -125,40 +129,35 @@ public:
         std::cout << "Enter id: " << std::endl;
         std::cin >> id;
         std::cout << "Enter name: ";
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cin.getline(name, NAME_L);
+        std::cin>>name;
         std::cout << "Deposit balance: $";
         std::cin >> balance;
 
-        SavingAccount* savingAcc = new SavingAccount();
-        savingAcc->m_accID = id;
-        savingAcc->m_balance = balance;
-        savingAcc->interestRate = 0; // You might want to set this value appropriately
-
+        SavingAccount* savingAcc = new SavingAccount(id,balance, name);
+         // You might want to set this value appropriately
+            savingAcc -> interestRate = 0;
         accArr[accNum++] = savingAcc;
         std::cout << "Saving Account created " << std::endl;
     }
 
     void MakeHighCreditAccount() {
-        int id, balance;
-        char name[NAME_L];
-        std::cout << "Enter id: " << std::endl;
-        std::cin >> id;
-        std::cout << "Enter name: ";
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cin.getline(name, NAME_L);
-        std::cout << "Deposit balance: $";
-        std::cin >> balance;
+    int id, balance;
+    char name[NAME_L];
+    std::cout << "Enter id: " << std::endl;
+    std::cin >> id;
+    std::cout << "Enter name: ";
+    std::cin >> name;
+    std::cout << "Deposit balance: $";
+    std::cin >> balance;
 
-        HighCreditAccount* highCreditAcc = new HighCreditAccount();
-        highCreditAcc->m_accID = id;
-        highCreditAcc->m_balance = balance;
-        highCreditAcc->interestRate = 0; // You might want to set this value appropriately
-        highCreditAcc->specialRate = 0; // You might want to set this value appropriately
+    HighCreditAccount* highCreditAcc = new HighCreditAccount(id, balance, name);
+    highCreditAcc->interestRate = 0; // Set this value appropriately
+    highCreditAcc->specialRate = 0; // Set this value appropriately
 
-        accArr[accNum++] = highCreditAcc;
-        std::cout << "High Credit Account created " << std::endl;
-    }
+    accArr[accNum++] = highCreditAcc;
+    std::cout << "High Credit Account created " << std::endl;
+}
+
 
     void MakeAccount() {
         int type;
@@ -179,7 +178,7 @@ public:
         }
     }
 
-    virtual void DepositMoney() {
+    void DepositMoney() {
         int d_money;
         std::cout << "Enter an amount of money to deposit: $ ";
         std::cin >> d_money;
