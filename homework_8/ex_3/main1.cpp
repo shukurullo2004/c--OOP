@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstring>
 #include <limits>
-
+// completed homework
 const int MAX_ACC_NUM = 100;
 
 enum BankOption {
