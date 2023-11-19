@@ -97,7 +97,7 @@ class AccountHandler:public Account{
         cout << "Deposit balance: $";
         cin >> balance;
         cout << "Enter interest rate: " << endl;
-        cin >> interestRate;
+        // cin >> interestRate;
         cout << "Enter special rate: " << endl;
         accArr[accNum++] = new Account(id, balance, name);
         cout <<"Account created " << endl;
@@ -111,9 +111,9 @@ class AccountHandler:public Account{
         cout << "Deposit balance: $";
         cin >> balance;
         cout << "Enter interest rate: " << endl;
-        cin >> interestRate;
+        // cin >> interestRate;
         cout << "Enter special rate: " << endl;
-        cin >> specialRate;
+        // cin >> specialRate;
         accArr[accNum++] = new Account(id, balance, name);
         cout <<"Account created " << endl;
     }

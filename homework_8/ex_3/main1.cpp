@@ -71,10 +71,7 @@ public:
 class SavingAccount : public Account {
 public:
     int interestRate;
-    SavingAccount(int ID, int balance, const char* cname) : m_accID(ID), m_balance(balance) {
-        m_cusName = new char[strlen(cname) + 1];
-        strcpy(m_cusName, cname);
-    }
+    SavingAccount(int ID, int balance, const char* cname) : Account(ID, balance, cname) { }
 
     void Deposit(int money) {
     if (money > 0) {
@@ -90,6 +87,7 @@ public:
 class HighCreditAccount : public SavingAccount {
 public:
     int specialRate;
+    HighCreditAccount(int ID, int balance, const char* cname) : SavingAccount(ID, balance, cname) { }
 
     void Deposit(int money){
         if (money > 0) {
@@ -134,8 +132,6 @@ public:
         std::cin >> balance;
 
         SavingAccount* savingAcc = new SavingAccount(id,balance, name);
-         // You might want to set this value appropriately
-            savingAcc -> interestRate = 0;
         accArr[accNum++] = savingAcc;
         std::cout << "Saving Account created " << std::endl;
     }
@@ -151,8 +147,6 @@ public:
     std::cin >> balance;
 
     HighCreditAccount* highCreditAcc = new HighCreditAccount(id, balance, name);
-    highCreditAcc->interestRate = 0; // Set this value appropriately
-    highCreditAcc->specialRate = 0; // Set this value appropriately
 
     accArr[accNum++] = highCreditAcc;
     std::cout << "High Credit Account created " << std::endl;
