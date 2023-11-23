@@ -26,7 +26,7 @@ int count;
  
 };
 
-// operator + ouyside of class;
+// operator + outside of class;
 Counter operator+(Counter c1, Counter c2){
     Counter sum = c1.count+c2.count;
     return sum;
