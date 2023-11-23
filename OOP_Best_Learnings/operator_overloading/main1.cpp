@@ -19,17 +19,18 @@ void operator<<(ostream& Cout, YoutTubeChannel &ch){
 int main(){
     YoutTubeChannel yt1("Shukurulloh lifes", 100);
     cout << yt1;
-
-
-    return 0;
-}
-// Xulosa: agar << foydalanmoqchi bolsa void qilib yuqoridagidek ishlat, 
-// aks hold agar class nomi bn ishlatmoqchi bolsang :
-//  friend ostream& operator<<(ostream& Cout, const YoutTubeChannel &ch);
-//  ostream& operator<<(ostream& Cout, const YoutTubeChannel &ch) {
+    // Xulosa: agar << foydalanmoqchi bolsa void qilib yuqoridagidek ishlat, 
+    // aks hold agar class nomi bn ishlatmoqchi bolsang :
+    //  friend ostream& operator<<(ostream& Cout, const YoutTubeChannel &ch);
+    //  ostream& operator<<(ostream& Cout, const YoutTubeChannel &ch) {
     // Cout << "name: " << ch.name << endl;
     // Cout << "subscribers: " << ch.subscribers << endl;
     // return Cout;  // Return the ostream reference
 
 
 // Eng ossonni void!
+
+
+
+    return 0;
+}
