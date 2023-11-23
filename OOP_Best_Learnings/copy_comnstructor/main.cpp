@@ -58,12 +58,12 @@ int main() {
 
 	Book book1("Millionaire Fastlane", "M.J. DeMarco");
 	Book book2("C++ Lambda Story", "Bartek F.");
-    Book book3 = (book1);
+    Book book3 = &book1;
     book1.print();
     book2.print();
     book3.print();
     Book book4 = book2;
     book4.SetTitle("Shukurulloning sarguzashtlari..");
     book4.print();
-	// 
+	
 }
