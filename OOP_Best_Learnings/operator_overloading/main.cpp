@@ -4,6 +4,7 @@ using namespace std;
 class Counter{
     friend Counter operator+(Counter c1, Counter c2);
     friend Counter operator*(int m, Counter c);
+    friend Counter operator*(Counter c, int m);
     private:
 
 int count;
@@ -22,9 +23,13 @@ int count;
     //     Counter sum = (count+counter.count);
     //     return sum;
     // }
-
+    // this for right and left changes 
  
 };
+Counter operator*(Counter c, int m){
+        Counter multi = c.count * m;
+        return multi;
+    }
 
 // operator + outside of class;
 Counter operator+(Counter c1, Counter c2){
@@ -48,8 +53,10 @@ int main(){
     // Multiplication
     
     Counter number4(5);
-    Counter number5 = 20 * number4 ;
+    Counter number5 = number4 *20;
+    Counter Number5 = 20 *number4;
     number5.print();
+    Number5.print();
     return 0;
 }
 
