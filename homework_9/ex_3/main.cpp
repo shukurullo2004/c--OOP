@@ -6,6 +6,7 @@ class Friction {
     friend Friction operator*(const Friction& f1, const Friction& f2);
     friend Friction operator*(const Friction& f2, int m);
     friend Friction operator*(int m, const Friction& f2);
+    friend Friction operator-(const Friction &f1 , const Friction &f2);
 
 private:
     int m_numerator;
@@ -14,7 +15,7 @@ private:
 public:
     Friction(int numerator = 0, int denominator = 1) : m_numerator{ numerator }, m_denominator{ denominator } {};
 
-   
+    // Constructor for converting an integer to a Friction object
     Friction(int wholeNumber) : m_numerator{ wholeNumber }, m_denominator{ 1 } {};
 };
 
@@ -41,13 +42,22 @@ Friction operator*(int m, const Friction& f2) {
     return Friction(numerator, denominator);
 }
 
+Friction operator-(const Friction &f1 , const Friction &f2){
+    Friction subst = f1.m
+}
+
+
+
+
 int main() {
-    Friction f1{ 1, 2 }, f2{ 3, 4 };
-    cout << f1 << ", " << f2 << endl;
-    cout << f1 * f2 << endl;
-    cout << f1 * 2 << endl;
-    cout << 3 * f2 << endl;
-    cout << 2 * (f1 * f2) * 3 << endl;
+    Fraction f1(1, 2), f2(3, 4);
+
+    std::cout << f1 << "," << f2 << std::endl;
+    std::cout << f1 << "*" << f2 << "=" << f1 * f2 << std::endl;
+    std::cout << f1 << "+" << f2 << "=" << f1 + f2 << std::endl;
+    std::cout << f1 << "-" << f2 << "=" << f1 - f2 << std::endl;
+    std::cout << 2 << "-" << f2 << "=" << 2 - f2 << std::endl;
+    std::cout << 2 << "+" << f1 << "=" << 2 + f1 << std::endl;
 
     return 0;
 }
