@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 class Friction{
-   friend ostream&operator<<(ostream&COUT , const Friction &f);
+   friend ostream&operator<<(ostream&COUT , const Friction f);
 private:
 int m_numerator;
 int m_denominator;
@@ -10,7 +10,7 @@ Friction(int numerator= 0, int denominator = 1):m_numerator{numerator},m_denomin
 
 
 };
-ostream&operator<<(ostream&COUT ,const Friction &f){
+ostream&operator<<(ostream&COUT ,const Friction f){
     COUT <<f.m_numerator <<"/" << f.m_denominator;
     return COUT;
 }
