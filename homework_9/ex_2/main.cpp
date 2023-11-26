@@ -14,7 +14,7 @@ private:
 public:
     Friction(int numerator = 0, int denominator = 1) : m_numerator{ numerator }, m_denominator{ denominator } {};
 
-    // Constructor for converting an integer to a Friction object
+   
     Friction(int wholeNumber) : m_numerator{ wholeNumber }, m_denominator{ 1 } {};
 };
 
