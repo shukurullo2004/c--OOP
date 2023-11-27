@@ -1,6 +1,5 @@
 #include <iostream>
 using namespace std;
-
 class Friction {
     friend ostream& operator<<(ostream& COUT, const Friction& f);
     friend Friction operator*(const Friction& f1, const Friction& f2);
@@ -13,7 +12,6 @@ class Friction {
 private:
     int m_numerator;
     int m_denominator;
-
 public:
     Friction(int numerator = 0, int denominator = 1) : m_numerator{ numerator }, m_denominator{ denominator } {cancel();};
  void cancel() {
@@ -60,9 +58,6 @@ public:
             } while (gcd <= m_denominator);
         }
     }
-    
-
-   
 }
 };
 
