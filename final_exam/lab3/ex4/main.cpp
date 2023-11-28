@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
-// array declare va getmax,getmin declarationlarni ko'rib eslab qol
+// array declare va getmax,getmin declarationlarni  int *array = new int[num]; ko'rib eslab qol
+// funtion declarationda * qoyiladi va [] qoyilmydi lkn main ichida  array ni ozi []qoyilmaydi  emas;
 int getMax(int* array,int size){
     int max = array[0];
     for(int i = 0; i < size; i ++){
