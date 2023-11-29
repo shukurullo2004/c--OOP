@@ -31,6 +31,5 @@ int main() {
     cout << "Area of Rectangle (W:20, L:10): " << shape::rec_area(20, 10) << endl;
     cout << "Area of Triangle (b:20, h:10): " << shape::tri_area(20, 10) << endl;
     cout << "Area of Circle (r:20): " << shape::circle_area(20) << endl;
-
     return 0;
 }
