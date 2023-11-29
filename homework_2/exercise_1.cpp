@@ -26,8 +26,6 @@ int main() {
     return 0;
 }
 
-// Function definitions
-
 // Sort three numbers using the specified comparison function
 void sort3(double& a, double& b, double& c, bool (*compare)(double&, double&)) {
     if (compare(a, b)) {
