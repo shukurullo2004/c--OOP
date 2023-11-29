@@ -39,37 +39,37 @@ public:
 ostream& operator<<(ostream& COUT, const Friction& f) {
     COUT << f.m_numerator << "/" << f.m_denominator;
     // these for checking purpose qaysi biri first working ekanini determine uchun
-    // cout <<"\n"<<" << operator" << endl;
+    cout <<"\n"<<" << operator" << endl;
     return COUT;
 }
 
 Friction operator*(const Friction& f1, const Friction& f2) {
     int numerator = (f1.m_numerator * f2.m_numerator);
     int denominator = (f1.m_denominator * f2.m_denominator);
-    // cout <<"C" << endl;
+     cout <<"C" << endl;
     return Friction(numerator, denominator);
 }
 
 Friction operator*(const Friction& f2, int m) {
     int numerator = (m * f2.m_numerator);
     int denominator = (f2.m_denominator);
-    // cout <<"B" << endl;
+    cout <<"B" << endl;
     return Friction(numerator, denominator);
 }
 
 Friction operator*(int m, const Friction& f2) {
     int numerator = (m * f2.m_numerator);
     int denominator = (f2.m_denominator);
-    // cout <<"A" << endl;
+     cout <<"A" << endl;
     return Friction(numerator, denominator);
 }
 
 int main() {
     Friction f1{ 1, 2 }, f2{ 3, 4 };
-    cout << f1 << ", " << f2 << endl;
-    cout << f1 * f2 << endl;
-    cout << f1 * 2 << endl;
-    cout << 3 * f2 << endl;
+    // cout << f1 << ", " << f2 << endl;
+    // cout << f1 * f2 << endl;
+    // cout << f1 * 2 << endl;
+    // cout << 3 * f2 << endl;
     cout << 2 * f1 * f2 * 3 << endl;
 
     return 0;
