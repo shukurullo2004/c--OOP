@@ -7,6 +7,7 @@ void swap2(double& a, double& b);
 bool ascending(double& a, double& b);
 bool descending(double& a, double& b);
 
+
 int main() {
     double na1 = 10.3, na2 = -2.1, na3 = 8.0;
     double nd1 = 10.3, nd2 = -2.1, nd3 = 8.0;
