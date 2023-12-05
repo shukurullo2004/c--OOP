@@ -68,9 +68,9 @@ int main() {
     InhaString str2 = " string class";
     InhaString str3 = str1 + str2;
 
-    cout << str1 << endl;
-    cout << str2 << endl;
-    cout << str3 << endl;
+    // cout << str1 << endl;
+    // cout << str2 << endl;
+    // cout << str3 << endl;
 
     // str1 += str2;
 
