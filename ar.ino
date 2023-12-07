@@ -74,7 +74,6 @@ void moveForward() {
   digitalWrite(motor2IN4, LOW);
   analogWrite(motor2ENB, 255);  // Full speed
 }
-
 void moveBackward() {
   digitalWrite(motor1IN1, LOW);
   digitalWrite(motor1IN2, HIGH);
