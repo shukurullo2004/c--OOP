@@ -1,53 +1,48 @@
 #include <iostream>
 using namespace std;
 
-
-class Point{
-    private:
+class Point {
+private:
     double a;
     double b;
-    public:
-    Point(double x, double y):a{x},b{y}{};
-    void info(){
-        cout <<"(x,y)="<<a<<","<<b<< endl;
-    }
-    void get(double &x, double &y){
-        x = a;
-        y = b;
-        cout << x << "," << y <<endl; 
-    }
-};
-
-class Circle{
-private:
-double radius = 0;
-Point center = 0;
 
 public:
-Circle():radius{0};
+    Point(double x, double y) : a{x}, b{y} {};
 
-Circle(Point p, double r){
-    Point = p;
-    radius = r;
+    void info() const {
+        cout << "(x,y)=" << a << "," << b << endl;
+    }
 
-}
-Circle(const Point& p, double r){
-    center = p
-    radius = r;
-
-}
-Circle(double x, double y, double r){
-    center = (x,y);
-    radius = r;
-}
-void info()const{ 
-    cout<< "center: ";
-    center.info();
-    cout << "radius: "<< radius<<endl;
-}
+    void get(double &x, double &y) const {
+        x = a;
+        y = b;
+        cout << x << "," << y << endl;
+    }
 };
 
-int main(){
+class Circle {
+private:
+    double radius;
+    Point center;
+
+public:
+    // Default constructor
+    Circle() : radius{0}, center{0, 0} {};
+
+    // Constructor with Point and radius
+    Circle(const Point &p, double r) : center{p}, radius{r} {};
+
+    // Constructor with coordinates (x, y) and radius
+    Circle(double x, double y, double r) : center{x, y}, radius{r} {};
+
+    void info() const {
+        cout << "center: ";
+        center.info();
+        cout << "radius: " << radius << endl;
+    }
+};
+
+int main() {
     Circle c1;
     Circle c2{};
     Point p{10.5, 20.5};
