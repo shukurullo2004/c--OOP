@@ -36,23 +36,24 @@ class EBook : public Book{
 };
 
 const int MAX_BOOK =100;
-class EbookLibrary{
+class EBookLibrary{
 private:
 EBook*m_books[100];
 int m_cnt;
 public:
 
-EbookLibrary(){
-
-}
+EBookLibrary():m_cnt{0}{};
 
 void AddBook(EBook*book){
-
+    m_books[m_cnt] = book;
+    m_cnt++;
 }
 
-
-~EbookLibrary(){
-
+void ShowAllBooks(){
+    for (size_t i = 0; i < m_cnt; i++)
+    {
+        m_books[i]->ShowEBookInfo();
+    }
 }
 };
 
