@@ -26,39 +26,39 @@ class Guitar : public Instrument{
 
 //  1. classni  nomlarini(main fun dagi ) o'zaro tenglash mumkin. * va & bn va faqat reference ni ozi bn ham ishlatsa bdi;
 
-// int main(){
-//     Instrument *first;
-//     Piano second;
-//     first = &second;
-//     first->play();
-
-
-//     return 0;
-
-// }
-
-// 2. 1-classning nomini 2-classning o'ziga tenglash mumkin * va new so'zlari bn va class"()" qoyilish kk ;
 int main(){
-    // pasda piano chiqadi;
-    Instrument *bir = new Piano();
-    bir->play();
+    Instrument *first;
+    Piano second;
+    first = &second;
+    first->play();
 
-    // pasda guitar chiqadi;
-    Instrument*ikki = new Guitar();
-    ikki->play();
-    // bu mumkin emas, child class parents classni ola olmaydi for more info check OOP course  i-class
-    // Piano*ikki = new Guitar();
-    // ikki->play();
-
-
-// hamma class ichidagi classlarni  bir *array ga olsa boladi va print qilsa boladi;
-    Instrument *instrument[2] = {bir, ikki};
-        for (size_t i = 0; i < 2; i++)
-        {
-            instrument[i]->play();
-        }
-        
 
     return 0;
+
 }
-// Abstract class bolishi uchun kamida 1 ta pure  virual function  bo'lishi kk, yani "virtual funksiya() = 0"; va unda body{} qismi bo'lmaydi; 
+
+// 2. 1-classning nomini 2-classning o'ziga tenglash mumkin * va new so'zlari bn va class"()" qoyilish kk ;
+// int main(){
+//     // pasda piano chiqadi;
+//     Instrument *bir = new Piano();
+//     bir->play();
+
+//     // // pasda guitar chiqadi;
+//     // Instrument*ikki = new Guitar();
+//     // ikki->play();
+//     // bu mumkin emas, child class parents classni ola olmaydi for more info check OOP course  i-class
+//     // Piano*ikki = new Guitar();
+//     // ikki->play();
+
+
+// // hamma class ichidagi classlarni  bir *array ga olsa boladi va print qilsa boladi;
+//     // Instrument *instrument[2] = {bir, ikki};
+//     //     for (size_t i = 0; i < 2; i++)
+//     //     {
+//     //         instrument[i]->play();
+//     //     }
+        
+
+//     return 0;
+// }
+// // Abstract class bolishi uchun kamida 1 ta pure  virual function  bo'lishi kk, yani "virtual funksiya() = 0"; va unda body{} qismi bo'lmaydi; 
