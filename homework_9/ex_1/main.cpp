@@ -14,8 +14,12 @@ ostream&operator<<(ostream&COUT ,const Friction f){
     COUT <<f.m_numerator <<"/" << f.m_denominator;
     return COUT;
 }
+
+
 int main(){
+
     Friction f1{1,2}, f2{3,4};
     cout << f1 << ", " << f2 << endl;
+    
 return 0;
 }
